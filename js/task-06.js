@@ -2,7 +2,6 @@
 на правильное количество символов. */
 
 const inputEl = document.querySelector('#validation-input');
-console.log(inputEl);
 
 const onCheckInputBlur = elem => {
   if (elem.currentTarget.value.length === 6) {
