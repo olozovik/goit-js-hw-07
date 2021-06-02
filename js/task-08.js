@@ -20,17 +20,17 @@ const refs = {
 };
 
 let quantity = 0;
-let width = 30;
-let height = 30;
 
 const createBoxes = amount => {
   const boxesArr = [];
+  let width = 30;
+  let height = 30;
   const randomColor = () => Math.round(Math.random() * (255 - 0));
 
   for (let i = 0; i < amount; i += 1) {
     const newBox = document.createElement('div');
     newBox.style.width = `${width}px`;
-    newBox.style.height = `${width}px`;
+    newBox.style.height = `${height}px`;
     newBox.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
     boxesArr.push(newBox);
     width += 10;
@@ -41,6 +41,7 @@ const createBoxes = amount => {
 };
 
 refs.buttonCreate.addEventListener('click', () => {
+  refs.boxes.innerHTML = '';
   quantity = Number.parseInt(refs.input.value);
   createBoxes(quantity);
 });
