@@ -27,8 +27,8 @@ categoryEl.forEach(item => {
 // console.log(`В списке ${categoryEl.length} категории.`);
 
 // for (const item of categoryEl) {
-//   const titleEl = item.querySelector('h2');
+//   const titleEl = item.firstElementChild;
 //   console.log(`Категория: ${titleEl.textContent}`);
-//   const listEl = item.querySelector('ul');
+//   const listEl = titleEl.nextElementSibling;
 //   console.log(`Количество элементов: ${listEl.children.length}`);
 // }

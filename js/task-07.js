@@ -10,8 +10,8 @@ const startFontSize = Number.parseInt(
   window.getComputedStyle(textEl, null).getPropertyValue('font-size'),
 );
 
-const onChangeFontSizeText = elem => {
-  const changeValue = elem.currentTarget.value - startValueRange;
+const onChangeFontSizeText = event => {
+  const changeValue = event.currentTarget.value - startValueRange;
   const fontSize = startFontSize + changeValue;
   textEl.style.fontSize = `${fontSize}px`;
 };

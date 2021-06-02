@@ -7,8 +7,8 @@ const refs = {
   nameSpan: document.querySelector('#name-output'),
 };
 
-const onGetNameInput = elem => {
-  refs.nameSpan.textContent = elem.currentTarget.value;
+const onGetNameInput = event => {
+  refs.nameSpan.textContent = event.currentTarget.value;
 
   if (refs.nameSpan.textContent.length === 0) {
     refs.nameSpan.textContent = 'незнакомец';
