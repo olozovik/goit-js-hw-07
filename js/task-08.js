@@ -40,13 +40,17 @@ const createBoxes = amount => {
   refs.boxes.append(...boxesArr);
 };
 
-refs.buttonCreate.addEventListener('click', () => {
+const onCreateBoxesClick = () => {
   refs.boxes.innerHTML = '';
   quantity = Number.parseInt(refs.input.value);
   createBoxes(quantity);
-});
+};
 
-refs.buttonClear.addEventListener('click', () => {
+refs.buttonCreate.addEventListener('click', onCreateBoxesClick);
+
+const onClearBoxesClick = () => {
   refs.boxes.innerHTML = '';
   refs.input.value = '';
-});
+};
+
+refs.buttonClear.addEventListener('click', onClearBoxesClick);
