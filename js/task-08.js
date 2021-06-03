@@ -21,20 +21,23 @@ const refs = {
 
 let quantity = 0;
 
+const getRandomNumber = () => Math.round(Math.random() * (255 - 0));
+
+const getRandomRgbColor = () => {
+  return `rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()})`;
+};
+
 const createBoxes = amount => {
   const boxesArr = [];
-  let width = 30;
-  let height = 30;
-  const randomColor = () => Math.round(Math.random() * (255 - 0));
+  let size = 30;
 
   for (let i = 0; i < amount; i += 1) {
     const newBox = document.createElement('div');
-    newBox.style.width = `${width}px`;
-    newBox.style.height = `${height}px`;
-    newBox.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+    newBox.style.width = `${size}px`;
+    newBox.style.height = `${size}px`;
+    newBox.style.backgroundColor = getRandomRgbColor();
     boxesArr.push(newBox);
-    width += 10;
-    height += 10;
+    size += 10;
   }
 
   refs.boxes.append(...boxesArr);
