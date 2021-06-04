@@ -16,21 +16,16 @@ const inputLength = Number(inputEl.getAttribute('data-length'));
 //   }
 // };
 
-const addClass = (elem, classInput) => {
-  if (classInput === 'valid') {
-    elem.classList.add('valid');
-    elem.classList.remove('invalid');
-  } else {
-    elem.classList.add('invalid');
-    elem.classList.remove('vainvalid');
-  }
+const updateClass = (elem, addClass, removeClass) => {
+  elem.classList.add(addClass);
+  elem.classList.remove(removeClass);
 };
 
 const onCheckInputBlur = event => {
   if (event.currentTarget.value.length === inputLength) {
-    addClass(event.currentTarget, 'valid');
+    updateClass(event.currentTarget, 'valid', 'invalid');
   } else {
-    addClass(event.currentTarget, 'invalid');
+    updateClass(event.currentTarget, 'invalid', 'valid');
   }
 };
 
